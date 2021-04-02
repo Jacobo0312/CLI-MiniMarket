@@ -3,11 +3,11 @@ package model;
 public class Person {
 
     private Id id;
-    private int number;
+    private String number;
 
 
-    public Person(Id id, int number) {
-        this.id = id;
+    public Person(String id, String number) {
+        this.id = Id.valueOf(id);
         this.number = number;
     }
 
