@@ -1,15 +1,10 @@
 package exceptions;
 
 @SuppressWarnings("serial")
-public class InvalidDayException {
+public class InvalidDayException extends Exception {
 
-
-    public InvalidDayException() {
-        super("La persona no puede ingresar porque es menor de edad");
+    public InvalidDayException(String p,String r) {
+        super("La persona no puede ingresar, Su penultimo numero de documento es "+p+" y hoy es un dia "+r);
     }
-    
-    
 
-
-    
 }

@@ -11,5 +11,15 @@ public class Person {
         this.number = number;
     }
 
+
+    public Id getId() {
+        return this.id;
+    }
+
+    public String getNumber() {
+        return this.number;
+    }
+
+
     
 }

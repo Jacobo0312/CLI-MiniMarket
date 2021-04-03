@@ -9,20 +9,17 @@ public class MiniMarket {
     private ArrayList<Person> peopleInside;
     private int count;
 
-
-
     public MiniMarket() {
         this.peopleInside = new ArrayList<Person>();
         this.count = 0;
     }
 
-    public void addPerson(Person person){
+    public void addPerson(Person person) {
         peopleInside.add(person);
     }
 
-
     public void verifyInput(String id,String number) throws InvalidDayException,YoungerException{
-        boolean valid=true;
+        count++;
 
         int day =LocalDateTime.now().getDayOfMonth();
         String r;
@@ -35,13 +32,16 @@ public class MiniMarket {
         //Exepciones-condiciones
 
         if (id.equals("TI")){
-            throw new YoungerException();
-            valid=false;
+            throw new YoungerException(id);
         }
 
 
-        String digit=id.charAt((id.length())-1)+"";
+        
+        String digit=number.charAt((number.length())-2)+"";
+
+
         int digitNumber=Integer.parseInt(digit);
+        System.out.println(digitNumber);
 
         String p;
         
@@ -53,12 +53,22 @@ public class MiniMarket {
 
 
         if (p.equals(r)){
-            throw new InvalidDayException();
-            valid=false;
+            throw new InvalidDayException(p,r);
         }
 
-        if (valid) addPerson(new Person(id, number));
-
-    }
+            addPerson(new Person(id, number));
     
+    }
+
+
+    public int getCount() {
+        return this.count;
+    }
+
+    public ArrayList<Person> getPeopleInside() {
+        return this.peopleInside;
+    }
+
+
+
 }
