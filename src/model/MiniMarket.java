@@ -41,7 +41,6 @@ public class MiniMarket {
 
 
         int digitNumber=Integer.parseInt(digit);
-        System.out.println(digitNumber);
 
         String p;
         
